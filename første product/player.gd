@@ -3,9 +3,10 @@ signal hit
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
+
 func _ready():
 	screen_size = get_viewport_rect().size
-	
+	hide()
 func _process(delta: float) -> void:
 	var Velocity = Vector2.ZERO
 	if Input.is_action_pressed("Up"):
