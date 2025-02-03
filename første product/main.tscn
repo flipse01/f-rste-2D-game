@@ -50,6 +50,8 @@ stream = ExtResource("5_8l6hg")
 
 [node name="HUD" parent="." instance=ExtResource("6_lu1a3")]
 
+[connection signal="hit" from="player" to="." method="game_over"]
 [connection signal="timeout" from="MOBTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="NewGame"]

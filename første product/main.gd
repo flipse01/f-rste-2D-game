@@ -6,11 +6,12 @@ var score
 func _ready() -> void:
 	pass
 
-func Game_over() -> void:
+func game_over() -> void:
 	$ScoreTimer.stop()
 	$MOBTimer.stop()
 	$Musik.stop()
 	$"Death sound".play()
+	$HUD.show_game_over()
 
 func NewGame() -> void:
 	score = 0
@@ -19,7 +20,6 @@ func NewGame() -> void:
 	$Musik.play()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready")
-	$HUD.show_game_over()
 	
 
 
