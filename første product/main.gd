@@ -4,7 +4,7 @@ extends Node
 var score
 
 func _ready() -> void:
-	NewGame()
+	pass
 
 func Game_over() -> void:
 	$ScoreTimer.stop()
@@ -17,6 +17,11 @@ func NewGame() -> void:
 	$player.start($PlayerStart.position)
 	$StartTimer.start()
 	$Musik.play()
+	$HUD.update_score(score)
+	$HUD.show_message("Get Ready")
+	$HUD.show_game_over()
+	
+
 
 func _on_score_timer_timeout() -> void:
 	score += 1
