@@ -9,11 +9,15 @@ func _ready() -> void:
 func Game_over() -> void:
 	$ScoreTimer.stop()
 	$MOBTimer.stop()
+	$Musik.stop()
+	$"Death sound".play()
 
 func NewGame() -> void:
 	score = 0
 	$player.start($PlayerStart.position)
 	$StartTimer.start()
+	$Musik.play()
+
 func _on_score_timer_timeout() -> void:
 	score += 1
 
