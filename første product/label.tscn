@@ -1,8 +1,44 @@
-[gd_scene format=3 uid="uid://bx2kb5xabqpkn"]
+[gd_scene load_steps=2 format=3 uid="uid://bx2kb5xabqpkn"]
 
-[node name="Label" type="Label"]
-offset_left = -223.0
-offset_top = -255.0
-offset_right = -86.0
-offset_bottom = -178.0
-text = "wow try to say no"
+[ext_resource type="FontFile" uid="uid://d373otprin5yc" path="res://fonts/Xolonium-Regular.ttf" id="1_j7jmh"]
+
+[node name="ScoreLabel" type="Label"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.5
+offset_right = 22.5
+offset_bottom = 78.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_j7jmh")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="Message" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -185.0
+offset_top = 272.0
+offset_right = 164.0
+offset_bottom = 431.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_j7jmh")
+theme_override_font_sizes/font_size = 64
+text = "Dodge the 
+creeps!"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -98.0
+offset_top = 562.0
+offset_right = 146.0
+offset_bottom = 648.0
+theme_override_fonts/font = ExtResource("1_j7jmh")
+theme_override_font_sizes/font_size = 64
+text = "START"
+
+[node name="MessageTimer" type="Timer" parent="."]
