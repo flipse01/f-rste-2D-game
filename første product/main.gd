@@ -2,6 +2,7 @@ extends Node
 
 @export var Mob_scene: PackedScene
 var score
+
 func _ready() -> void:
 	NewGame()
 

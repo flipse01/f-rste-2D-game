@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://onkgs604eh4v"]
+[gd_scene load_steps=5 format=3 uid="uid://dlxr66ggjiweo"]
 
-[ext_resource type="PackedScene" uid="uid://dmk1opnteha73" path="res://player.tscn" id="1_pavsw"]
+[ext_resource type="PackedScene" uid="uid://bskbynvi14cge" path="res://player.tscn" id="1_pavsw"]
 [ext_resource type="Script" path="res://main.gd" id="1_xlin2"]
-[ext_resource type="PackedScene" uid="uid://d2p8ribb7dw6t" path="res://mob.tscn" id="2_6lvb6"]
+[ext_resource type="PackedScene" uid="uid://cx6wj533k3jt1" path="res://mob.tscn" id="2_6lvb6"]
 
 [sub_resource type="Curve2D" id="Curve2D_i1vc4"]
 _data = {
