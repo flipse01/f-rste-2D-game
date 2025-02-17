@@ -26,6 +26,7 @@ func NewGame() -> void:
 func _on_score_timer_timeout() -> void:
 	score += 1
 	$HUD.update_score(score)
+	$MOBTimer.set_wait_time(0.75 - 0.01 * score)
 
 
 func _on_start_timer_timeout() -> void:
@@ -35,8 +36,6 @@ func _on_start_timer_timeout() -> void:
 
 func _on_mob_timer_timeout() -> void:
 	var mob = Mob_scene.instantiate()
-	
-	#$MOBTimer.wait_time == (0.75 - 0.01 * score)
 	
 	var mob_spawn_location = $MobPath/MobSpownLocation
 	mob_spawn_location.progress_ratio = randf()

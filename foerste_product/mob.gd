@@ -6,3 +6,7 @@ func _ready() -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
+
+func _size() -> void:
+	$AnimatedSprite2D.apply_scale(0.5)
+	$CollisionShape2D.apply_scale(0.5)
