@@ -26,10 +26,12 @@ func NewGame() -> void:
 func _on_score_timer_timeout() -> void:
 	score += 1
 	$HUD.update_score(score)
+	$MOBTimer.wait_time == (0.75 - 0.01 * score)
 
 func _on_start_timer_timeout() -> void:
 	$MOBTimer.start()
 	$ScoreTimer.start()
+
 
 func _on_mob_timer_timeout() -> void:
 	var mob = Mob_scene.instantiate()
