@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlxr66ggjiweo"]
+[gd_scene load_steps=10 format=3 uid="uid://dlxr66ggjiweo"]
 
 [ext_resource type="PackedScene" uid="uid://bskbynvi14cge" path="res://player.tscn" id="1_pavsw"]
 [ext_resource type="Script" path="res://main.gd" id="1_xlin2"]
@@ -6,7 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://b3t35lkmwqwx4" path="res://art/House In a Forest Loop.ogg" id="4_p5uiq"]
 [ext_resource type="AudioStream" uid="uid://178qq10x7qy2" path="res://art/gameover.wav" id="5_8l6hg"]
 [ext_resource type="PackedScene" uid="uid://vjkhw1mmri0a" path="res://HUD.tscn" id="6_lu1a3"]
-[ext_resource type="PackedScene" uid="uid://oolpp4l5j17b" path="res://poweup.tscn" id="7_p6s8t"]
+[ext_resource type="PackedScene" uid="uid://dsqdggr8hro0l" path="res://poweup.tscn" id="7_p6s8t"]
+[ext_resource type="Script" path="res://powerup_timer.gd" id="8_k0mgn"]
 
 [sub_resource type="Curve2D" id="Curve2D_i1vc4"]
 _data = {
@@ -54,8 +55,12 @@ stream = ExtResource("5_8l6hg")
 
 [node name="PowerUp" parent="." instance=ExtResource("7_p6s8t")]
 
+[node name="PowerupTimer" type="Timer" parent="."]
+script = ExtResource("8_k0mgn")
+
 [connection signal="hit" from="player" to="." method="game_over"]
 [connection signal="timeout" from="MOBTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="NewGame"]
+[connection signal="timeout" from="PowerupTimer" to="PowerupTimer" method="_on_timeout"]
